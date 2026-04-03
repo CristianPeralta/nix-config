@@ -122,6 +122,13 @@ in {
       options = "compose:ralt";
     };
 
+    # ── SSH ──────────────────────────────────────────────────
+    services.openssh.enable = true;
+    services.openssh.settings.PasswordAuthentication = false;
+    users.users.${userName}.openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL0GgK5D1TB3A4vPB/GrLdIv7bKV8eSvIBkJOMI3xVfH cristian@pc"
+    ];
+
     # ── Zona horaria ─────────────────────────────────────────
     time.timeZone = "America/Lima"; # Peru
 

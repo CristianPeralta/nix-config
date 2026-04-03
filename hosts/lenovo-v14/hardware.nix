@@ -52,7 +52,7 @@
     # ── Audio: Intel SOF (Sound Open Firmware) ───────────────
     # Ice Lake usa SOF en lugar del HDA tradicional
     hardware.enableAllFirmware = true;
-    boot.initrd.kernelModules = [ "snd_sof_pci_intel_icl" ];
+    boot.initrd.availableKernelModules = [ "snd_sof_pci_intel_icl" "i915" ];
 
     # ── Boot ─────────────────────────────────────────────────
     boot.kernelParams = [
@@ -60,9 +60,6 @@
       "acpi_osi=Linux"
       "mem_sleep_default=deep"  # Mejor consumo en suspend
     ];
-
-    # Módulo i915 en initrd para early KMS (mkAfter para no conflictuar con hardware-configuration.nix)
-    boot.initrd.kernelModules = lib.mkAfter [ "i915" "snd_sof_pci_intel_icl" ];
 
     # ── NVMe: optimización de rendimiento ────────────────────
     # Kingston SNV2S500G
