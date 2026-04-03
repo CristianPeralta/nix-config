@@ -11,7 +11,7 @@
     prevstable-nodejs.url = "github:nixos/nixpkgs?rev=1e409aeb5a9798a36e1cca227b7f8b8f3176e04d"; # Node v20
     prevstable-gaming.url = "github:nixos/nixpkgs?rev=b2a3852bd078e68dd2b3dfa8c00c67af1f0a7d20"; # nixos-25.05 (21 sep 2025)
     prevstable-intune.url = "github:kahlstrm/nixpkgs?rev=8eaee110344796db060382e15d3af0a9fc396e0e"; # nixos-unstable (21 sep 2025)
-    prevstable-msedge.url = "github:Daholli/nixpkgs?rev=fe6e79e571fa7eb7693cda131b68fe9891078adf"; # master (07 jun 2025)
+    prevstable-msedge.follows = "nixpkgs"; # Daholli/nixpkgs repo no longer exists — not using Edge
 
     # home-manager
     home-manager.url = "github:nix-community/home-manager?rev=7b5a978e00273b8676c530c03d315f5b75fae564"; # release-25.05 (25 jul 2025)
