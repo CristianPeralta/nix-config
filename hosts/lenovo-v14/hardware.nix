@@ -39,14 +39,10 @@
     };
 
     # ── WiFi: Realtek RTL8822CE ──────────────────────────────
-    # Driver rtl8822ce via módulo extra del kernel
-    # Alternativa futura: rtw89 (driver upstream, mejor mantenido)
-    boot.extraModulePackages = with config.boot.kernelPackages;
-      [ rtl8822ce ];
-
-    # Desactivar power saving en RTL8822CE (causa desconexiones)
+    # Kernel 6.x tiene soporte nativo via rtw89 — no necesita módulo extra
+    # Si WiFi no funciona, probar: boot.kernelModules = [ "rtw89_8822ce" ];
     boot.extraModprobeConfig = ''
-      options rtl8822ce ips=0 msi=1
+      options rtw89_8822ce disable_ps=1
     '';
 
     # ── Audio: Intel SOF (Sound Open Firmware) ───────────────
