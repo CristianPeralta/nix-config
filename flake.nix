@@ -218,6 +218,7 @@
       nixosConfigurations = {
         gdesktop = mkNixosSystem inputs.nixpkgs "x86_64-linux" "gdesktop";
         glegion = mkNixosSystem inputs.nixpkgs "x86_64-linux" "glegion";
+        lenovo-v14 = mkNixosSystem inputs.nixpkgs "x86_64-linux" "lenovo-v14";
       };
     };
 }
