@@ -88,6 +88,7 @@ in {
     _custom.desktop.greetd.enable = true;
     _custom.desktop.greetd.enableAutoLogin = false;
     _custom.desktop.greetd.enablePamAutoLogin = true;
+    _custom.desktop.xwaylandvideobridge.enable = false; # removido en nixpkgs 24.11+
 
     # Cursor
     _custom.desktop.cursor.name = "catppuccin-mocha-dark-cursors";
