@@ -61,8 +61,8 @@
       "mem_sleep_default=deep"  # Mejor consumo en suspend
     ];
 
-    # Módulo i915 en initrd para early KMS
-    boot.initrd.kernelModules = [ "i915" "snd_sof_pci_intel_icl" ];
+    # Módulo i915 en initrd para early KMS (mkAfter para no conflictuar con hardware-configuration.nix)
+    boot.initrd.kernelModules = lib.mkAfter [ "i915" "snd_sof_pci_intel_icl" ];
 
     # ── NVMe: optimización de rendimiento ────────────────────
     # Kingston SNV2S500G
