@@ -50,6 +50,7 @@ in {
     _custom.programs.tmux.systemdEnable = true;
     _custom.programs.bottom.enable = true;
     _custom.programs.less.enable = true;
+    _custom.programs.taskwarrior.enable = true; # requerido por quickshell (TIMEWARRIORDB)
 
     # ── Dev ──────────────────────────────────────────────────
     _custom.programs.lang-nix.enable = true;
