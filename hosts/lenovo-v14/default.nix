@@ -50,8 +50,8 @@ in {
     _custom.security.gnome-keyring.enable = true;
 
     # ── Red ─────────────────────────────────────────────────
-    # NetworkManager con iwd como backend (setup de wochap)
-    networking.networkmanager.enable = lib.mkForce true;
+    # Habilitar módulo de networking de wochap (iwd + NetworkManager)
+    _custom.desktop.networking.enable = true;
 
     # ── SSH ──────────────────────────────────────────────────
     services.openssh.enable = true;
