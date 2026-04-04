@@ -50,9 +50,10 @@ in {
     _custom.security.gnome-keyring.enable = true;
 
     # ── Red ─────────────────────────────────────────────────
-    # RTL8822CE conflicta con iwd — usar NetworkManager
+    # RTL8822CE: usar NetworkManager con wpa_supplicant backend
     networking.wireless.iwd.enable = lib.mkForce false;
     networking.networkmanager.enable = lib.mkForce true;
+    networking.networkmanager.wifi.backend = lib.mkForce "wpa_supplicant";
 
     # ── SSH ──────────────────────────────────────────────────
     services.openssh.enable = true;
