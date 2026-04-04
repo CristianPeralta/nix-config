@@ -54,18 +54,18 @@ in {
     networking.wireless.iwd.enable = false;
     networking.networkmanager.enable = true;
 
+    # ── SSH ──────────────────────────────────────────────────
+    services.openssh.enable = true;
+    services.openssh.settings.PasswordAuthentication = false;
+
     # ── Usuario ──────────────────────────────────────────────
     users.users.${userName} = {
       initialPassword = "cambiar123";
       extraGroups = [ "networkmanager" ];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL0GgK5D1TB3A4vPB/GrLdIv7bKV8eSvIBkJOMI3xVfH cristian@pc"
+      ];
     };
-
-    # ── SSH ──────────────────────────────────────────────────
-    services.openssh.enable = true;
-    services.openssh.settings.PasswordAuthentication = false;
-    users.users.${userName}.openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL0GgK5D1TB3A4vPB/GrLdIv7bKV8eSvIBkJOMI3xVfH cristian@pc"
-    ];
 
     # ── Sistema ──────────────────────────────────────────────
     services.xserver.xkb = {
