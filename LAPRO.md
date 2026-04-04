@@ -89,8 +89,9 @@ git checkout lapro
 # Generar hardware-configuration.nix de esta máquina
 sudo nixos-generate-config --show-hardware-config > hosts/lenovo-v14/hardware-configuration.nix
 
-# Aplicar configuración
-sudo nixos-rebuild switch --flake .#lenovo-v14
+# Aplicar configuración (boot en primera vez — config grande, no switch)
+sudo nixos-rebuild boot --flake .#lenovo-v14 --max-jobs 1
+sudo reboot
 ```
 
 ---
