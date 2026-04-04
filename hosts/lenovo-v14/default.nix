@@ -49,6 +49,15 @@ in {
     _custom.archetypes.wm-wayland-desktop.enable = true;
     _custom.security.gnome-keyring.enable = true;
 
+    # ── Red ─────────────────────────────────────────────────
+    # RTL8822CE conflicta con iwd — usar NetworkManager
+    networking.wireless.iwd.enable = false;
+    networking.networkmanager.enable = true;
+
+    # ── Usuario ──────────────────────────────────────────────
+    users.users.${userName}.initialPassword = "cambiar123";
+    users.users.${userName}.extraGroups = [ "networkmanager" ];
+
     # ── SSH ──────────────────────────────────────────────────
     services.openssh.enable = true;
     services.openssh.settings.PasswordAuthentication = false;
