@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 # ============================================================
 # Lenovo V14 IIL — Host Configuration (MINIMAL)
@@ -51,8 +51,8 @@ in {
 
     # ── Red ─────────────────────────────────────────────────
     # RTL8822CE conflicta con iwd — usar NetworkManager
-    networking.wireless.iwd.enable = false;
-    networking.networkmanager.enable = true;
+    networking.wireless.iwd.enable = lib.mkForce false;
+    networking.networkmanager.enable = lib.mkForce true;
 
     # ── SSH ──────────────────────────────────────────────────
     services.openssh.enable = true;
