@@ -55,8 +55,10 @@ in {
     networking.networkmanager.enable = true;
 
     # ── Usuario ──────────────────────────────────────────────
-    users.users.${userName}.initialPassword = "cambiar123";
-    users.users.${userName}.extraGroups = [ "networkmanager" ];
+    users.users.${userName} = {
+      initialPassword = "cambiar123";
+      extraGroups = [ "networkmanager" ];
+    };
 
     # ── SSH ──────────────────────────────────────────────────
     services.openssh.enable = true;
