@@ -59,7 +59,9 @@ in {
     services.openssh.settings.PasswordAuthentication = false;
 
     # ── Usuario ──────────────────────────────────────────────
+    # Nullificar el hashedPassword hardcodeado de Gean para usar el nuestro
     users.users.${userName} = {
+      hashedPassword = lib.mkForce null;
       initialPassword = "cambiar123";
       extraGroups = [ "networkmanager" ];
       openssh.authorizedKeys.keys = [
