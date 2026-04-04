@@ -89,7 +89,9 @@ git checkout lapro
 # Generar hardware-configuration.nix de esta máquina
 sudo nixos-generate-config --show-hardware-config > hosts/lenovo-v14/hardware-configuration.nix
 
-# Aplicar configuración (boot en primera vez — config grande, no switch)
+# Aplicar configuración
+# IMPORTANTE: usar 'boot' en la primera vez (config grande — no usar switch)
+# IMPORTANTE: --max-jobs 1 para evitar OOM killer en 8GB RAM compilando Hyprland
 sudo nixos-rebuild boot --flake .#lenovo-v14 --max-jobs 1
 sudo reboot
 ```
