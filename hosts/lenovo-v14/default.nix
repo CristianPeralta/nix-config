@@ -50,10 +50,8 @@ in {
     _custom.security.gnome-keyring.enable = true;
 
     # ── Red ─────────────────────────────────────────────────
-    # RTL8822CE: usar NetworkManager con wpa_supplicant backend
-    networking.wireless.iwd.enable = lib.mkForce false;
+    # NetworkManager con iwd como backend (setup de wochap)
     networking.networkmanager.enable = lib.mkForce true;
-    networking.networkmanager.wifi.backend = lib.mkForce "wpa_supplicant";
 
     # ── SSH ──────────────────────────────────────────────────
     services.openssh.enable = true;
