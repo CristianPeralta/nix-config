@@ -90,7 +90,10 @@ git checkout lapro
 sudo nixos-generate-config --show-hardware-config > hosts/lenovo-v14/hardware-configuration.nix
 
 # Aplicar configuración
-sudo nixos-rebuild switch --flake .#lenovo-v14
+# IMPORTANTE: usar 'boot' en la primera vez (config grande — no usar switch)
+# IMPORTANTE: --max-jobs 1 para evitar OOM killer en 8GB RAM compilando Hyprland
+sudo nixos-rebuild boot --flake .#lenovo-v14 --max-jobs 1
+sudo reboot
 ```
 
 ---
