@@ -30,7 +30,13 @@ in {
     _custom.programs.core-utils-linux.enable = true;
     _custom.programs.git.enable = true;
     _custom.programs.git.enableUser = true;
-    _custom.programs.taskwarrior.enable = true; # requerido por quickshell
+    _custom.programs.taskwarrior.enable = true;
+    _custom.programs.foot.enable = true;
+    _custom.programs.foot.systemdEnable = true;
+    _custom.programs.vscode.enable = true;
+
+    _custom.programs.firefox.enable = true;
+    environment.systemPackages = with pkgs; [ google-chrome ];
 
     # ── Desktop mínimo ───────────────────────────────────────
     _custom.desktop.hyprland.enable = true;
@@ -79,6 +85,9 @@ in {
     time.timeZone = "America/Lima";
 
     system.stateVersion = "24.11";
-    home-manager.users.${userName}.home.stateVersion = "24.11";
+    home-manager.users.${userName} = {
+      home.stateVersion = "24.11";
+      services.udiskie.enable = true;
+    };
   };
 }

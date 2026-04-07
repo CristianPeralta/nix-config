@@ -55,6 +55,7 @@
       "i915.enable_psr=0"       # Evita flickering en pantalla (común en Ice Lake)
       "acpi_osi=Linux"
       "mem_sleep_default=deep"  # Mejor consumo en suspend
+      "acpi_mask_gpe=0x43"      # Deshabilita GPE 43 (loop de interrupciones ACPI)
     ];
 
     # ── NVMe: optimización de rendimiento ────────────────────

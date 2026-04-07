@@ -2923,22 +2923,6 @@
         "type": "github"
       }
     },
-    "prevstable-msedge": {
-      "locked": {
-        "lastModified": 1748867993,
-        "narHash": "sha256-SyylHXg6HhiNYEsyJIzeJPz7q2VjwxmWsjpyLjYSJ5U=",
-        "owner": "Daholli",
-        "repo": "nixpkgs",
-        "rev": "fe6e79e571fa7eb7693cda131b68fe9891078adf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Daholli",
-        "repo": "nixpkgs",
-        "rev": "fe6e79e571fa7eb7693cda131b68fe9891078adf",
-        "type": "github"
-      }
-    },
     "prevstable-neovim": {
       "locked": {
         "lastModified": 1756868953,
@@ -3153,7 +3137,9 @@
         "prevstable-gaming": "prevstable-gaming",
         "prevstable-intune": "prevstable-intune",
         "prevstable-mesa": "prevstable-mesa",
-        "prevstable-msedge": "prevstable-msedge",
+        "prevstable-msedge": [
+          "nixpkgs"
+        ],
         "prevstable-neovim": "prevstable-neovim",
         "prevstable-nodejs": "prevstable-nodejs",
         "prevstable-python": "prevstable-python",
